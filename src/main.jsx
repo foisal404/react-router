@@ -6,6 +6,7 @@ import './index.css'
 import {
   createBrowserRouter,
   RouterProvider,
+  useNavigation,
 } from "react-router-dom";
 import About from './components/About/About';
 import Home from './components/Home/Home';
@@ -14,7 +15,7 @@ import Root from './components/Root/Root';
 import Users from './components/Users/Users';
 import UserDetails from './components/UserDetails/UserDetails';
 
-//2. declaire Route set
+//2. declaire path Route set
 // const router = createBrowserRouter([
 //   {
 //     path: "/",
@@ -30,6 +31,8 @@ import UserDetails from './components/UserDetails/UserDetails';
 //   }
 
 // ]);
+
+
 const router=createBrowserRouter([
   {
     path: "/",
@@ -56,6 +59,10 @@ const router=createBrowserRouter([
         path:"/user/:userid",
         element:<UserDetails></UserDetails>,
         loader:({params})=> fetch(`https://jsonplaceholder.typicode.com/users/${params.userid}`)
+      },
+      {
+        path: '*',
+        element:<h1>404 error</h1>
       }
     ]
     

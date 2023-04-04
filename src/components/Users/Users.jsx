@@ -14,7 +14,7 @@ const Users = () => {
                 {
                     data.map(user=><User key="user.id" user={user}></User>)
                 }
-            </div>
+            </div>   
         </div>
     );
 };

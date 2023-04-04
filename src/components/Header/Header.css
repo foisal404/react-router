@@ -1,3 +1,6 @@
 .nav-item a{
     margin: 0 10px;
 }
+.nav-item{
+    display: flex;
+}
